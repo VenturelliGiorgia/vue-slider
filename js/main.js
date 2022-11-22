@@ -31,14 +31,22 @@ createApp({
             }
         }
     },
-    //POTREBBE NON FUNZIONARE, NON L'HO PROVATO
+
     methods: {
         goPrev() {
+            if (this.currentImageIndex === 0) {
+                this.currentImageIndex = this.slides.image.length - 1;
+            } else {
                 this.currentImageIndex--;
+            }
         },
         goNext() {
+            if (this.currentImageIndex === this.slides.image.length - 1) {
+                this.currentImageIndex = 0;
+            } else {
                 this.currentImageIndex++;
+            }
         },
     }
 
-        }).mount("#app")
+}).mount("#app")
